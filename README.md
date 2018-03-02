@@ -8,7 +8,7 @@
 6) Хеші, які будемо ламати https://github.com/sekortest/owaspkyiv/blob/master/hashes.txt
 
 Словники:
-http://wordbook.xyz/download/big/rockyou.rar
-http://wordbook.xyz/download/country/Russia/umenshitelnye-imena.txt
-http://wordbook.xyz/download/country/Russia/klichki-zivotnyh.rar
-http://wordbook.xyz/download/country/Russia/zenskie-muzkie-imena.rar
+# http://wordbook.xyz/download/big/rockyou.rar
+# http://wordbook.xyz/download/country/Russia/umenshitelnye-imena.txt
+# http://wordbook.xyz/download/country/Russia/klichki-zivotnyh.rar
+# http://wordbook.xyz/download/country/Russia/zenskie-muzkie-imena.rar
