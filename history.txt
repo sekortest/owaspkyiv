@@ -1,0 +1,151 @@
+ 02:50* head hashes.txt
+ 04:07* awk '{print $0 ":OWASPKyivMeetupSpring2018"}' hashes.txt > saltedhashes.txt
+ 04:10* wc -l saltedhashes.txt
+ 04:18* head saltedhashes.txt
+ 05:30* cat check.sh
+ 06:55* hashcat -m 10 -b
+ 08:41* hashcat -O saltedhashes.txt -m 10 -h
+ ERROR!!! 09:00* hashcat -O saltedhashes.txt -m 10 -a 3 dictionaries/rockyou.txt
+ 09:30* hashcat -O saltedhashes.txt -m 10 -a 0 dictionaries/rockyou.txt
+ 11:07* hashcat -O saltedhashes.txt -m 10 -a 6 dictionaries/rockyou.txt ?d
+ 11:23* hashcat -O saltedhashes.txt -m 10 -a 6 dictionaries/rockyou.txt ?d?d
+ 13:35* hashcat -O saltedhashes.txt -m 10 -a 6 dictionaries/rockyou.txt 19?d?d
+ 14:33* hashcat -O saltedhashes.txt -m 10 -a 7 ?d?d -i dictionaries/rockyou.txt
+ 15:22* hashcat -O saltedhashes.txt -m 10 -a 7 19?d?d -i dictionaries/rockyou.txt
+ 16:44* hashcat -O saltedhashes.txt -m 10 -a 3 ?d?d?d?d?d?d?d?d?d -i
+ 17:48* hashcat -O saltedhashes.txt -m 10 -a 3 0?d?d?d?d?d?d?d?d?d
+ 18:21* hashcat -O saltedhashes.txt -m 10 -a 3 ?l?l?l?l?l?l?l -i
+ 20:43* hashcat -O saltedhashes.txt -m 10 -a 0 dictionaries/rockyou.txt -r /usr/local/Cellar/hashcat/4.0.0/share/doc/hashcat/rules/best64.rule
+ 22:00  nano /usr/local/Cellar/hashcat/4.0.0/share/doc/hashcat/rules/best64.rule
+ 23:32* hashcat -O saltedhashes.txt -m 10 -a 0 dictionaries/rockyou.txt -r /usr/local/Cellar/hashcat/4.0.0/share/doc/hashcat/rules/rockyou-30000.rule
+ 24:53* hashcat -O saltedhashes.txt -m 10 -a 0 dictionaries/klichki-zivotnyh/klichki-latin.txt
+ 25:23* hashcat -O saltedhashes.txt -m 10 -a 0 dictionaries/klichki-zivotnyh/klichki-latin.txt -r /usr/local/Cellar/hashcat/4.0.0/share/doc/hashcat/rules/best64.rule
+ 25:40* hashcat -O saltedhashes.txt -m 10 -a 0 dictionaries/klichki-zivotnyh/klichki-latin.txt -r /usr/local/Cellar/hashcat/4.0.0/share/doc/hashcat/rules/rockyou-30000.rule
+ 26:16* hashcat -O saltedhashes.txt -m 10 -a 6 dictionaries/klichki-zivotnyh/klichki-latin.txt ?d?d?d?d?d -i
+ 29:00* hashcat -O saltedhashes.txt -m 10 -a 7 ?d?d?d?d?d dictionaries/klichki-zivotnyh/klichki-latin.txt
+ 29:58* wc -l dictionaries/*
+ 30:07* head dictionaries/umenshitelnye-imena.txt
+ 30:10* head dictionaries/zenskie-muzkie-imena.txt
+ 31:00* iconv -f WINDOWS-1251 -t UTF-8 dictionaries/umenshitelnye-imena.txt > um.txt
+ 31:14* iconv -f WINDOWS-1251 -t UTF-8 dictionaries/zenskie-muzkie-imena.txt > zm.txt
+ 31:17* head um.txt
+ 32:01* cat um.txt zm.txt > dictionaries/ukr.txt
+ 32:06* wc -l dictionaries/ukr.txt
+ 32:39* hashcat -O saltedhashes.txt -m 10 -a 0 dictionaries/ukr.txt
+ 34:08* hashcat -O saltedhashes.txt -m 10 -a 0 dictionaries/ukr.txt -r /usr/local/Cellar/hashcat/4.0.0/share/doc/hashcat/rules/best64.rule
+ 34:15* hashcat -O saltedhashes.txt -m 10 -a 0 dictionaries/ukr.txt -r /usr/local/Cellar/hashcat/4.0.0/share/doc/hashcat/rules/rockyou-30000.rule
+ 37:03* hashcat -O saltedhashes.txt -m 10 -a 3 -1 ?l?u ?1?1?d?d?d?d?d?d
+ 37:34* hashcat -O saltedhashes.txt -m 10 -a 3 -1 ?l?u ?1?1?d?d?d?d?d?d --show
+ 37:43* hashcat -O saltedhashes.txt -m 10 -a 3 -1 ?l?u ?1?1?d?d?d?d?d?d --show | ./check.sh
+ 37:55* cat check.sh
+ 37:26* hashcat -O saltedhashes.txt -m 10 -a 3 -1 ?l?u ?u?u?d?d?d?d?u?u
+ 38:53* hashcat -O saltedhashes.txt -m 10 -a 3 -1 ?l?u ?l?l?d?d?d?d?l?l
+ 39:22* hashcat -O saltedhashes.txt -m 10 -a 3 -1 ?l?u ?1?1?d?d?d?d?d?d --show | ./check.sh
+ 40:30* hashcat -O saltedhashes.txt -m 10 -a 3 -1 ?l?u ?1?l?l?l?d?d?d?d
+ 41:47* hashcat -O saltedhashes.txt -m 10 -a 3 -1 ?l?u ?1?l?l?l?l?d?d?d?d
+ 42:56* hashcat -O saltedhashes.txt -m 10 -a 3 -1 ?l?u -2 12 -3 90 ?1?l?l?l?l?2?3?d?d
+ 44:22* ll
+ 44:31* cat charset-ua-utf8.txt
+ ERROR!!! 46:25* hashcat -O saltedhashes.txt -m 10 -a 3 --hex-charset -1 d0d1 -2 808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebf
+ 46:45* hashcat -O saltedhashes.txt -m 10 -a 3 --hex-charset -1 d0d1 -2 808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebf ?1?2?1?2?1?2?1?2
+ STOPPED 46:56* hashcat -O saltedhashes.txt -m 10 -a 3 --hex-charset -1 d0d1 -2 808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebf ?1?2?1?2?1?2?1?2?1?2
+ 46:57* hashcat -O saltedhashes.txt -m 10 -a 3 --hex-charset -1 d0 -2 808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebf ?1?2?1?2?1?2?1?2?1?2
+ STOPPED 47:25* hashcat -O saltedhashes.txt -m 10 -a 3 --hex-charset -1 d0 -2 808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebf ?1?2?1?2?1?2?1?2?1?2?d
+ 48:00* hashcat -O saltedhashes.txt -m 10 -a 3 --hex-charset -1 d0 -2 808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebf ?1?2?1?2?1?2?1?2?1?23139?d?d
+ 48:26* hashcat -O saltedhashes.txt -m 10 -a 3 --hex-charset -1 d0 -2 808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebf ?1?2?1?2?1?2?1?23139?d?d
+ 49:05* hashcat -O saltedhashes.txt -m 10 -a 1 dictionaries/ukr.txt dictionaries/ukr.txt
+ 49:22* hashcat -O saltedhashes.txt -m 10 -a 1 dictionaries/klichki-zivotnyh/klichki-latin.txt dictionaries/klichki-zivotnyh/klichki-latin.txt
+ STOPPED 50:20* hashcat -O saltedhashes.txt -m 10 -a 1 dictionaries/klichki-zivotnyh/klichki-latin.txt dictionaries/rockyou.txt
+ STOPPED 51:12* hashcat -O saltedhashes.txt -m 10 -a 1 dictionaries/rockyou.txt dictionaries/klichki-zivotnyh/klichki-latin.txt
+ 51:49* hashcat -O saltedhashes.txt -m 10 -a 1 dictionaries/rockyou.txt dictionaries/klichki-zivotnyh/klichki-latin.txt --show
+ 52:00* hashcat -O saltedhashes.txt -m 10 -a 1 dictionaries/rockyou.txt dictionaries/klichki-zivotnyh/klichki-latin.txt --show --outfile-format 2
+ 52:11* hashcat -O saltedhashes.txt -m 10 -a 1 dictionaries/rockyou.txt dictionaries/klichki-zivotnyh/klichki-latin.txt --show --outfile-format 2 > dictionaries/own.txt
+ STOPPED 52:30* hashcat -O saltedhashes.txt -m 10 -a 1 dictionaries/rockyou.txt dictionaries/own.txt
+ 5253* hashcat -O saltedhashes.txt -m 10 -a 1 dictionaries/own.txt dictionaries/own.txt
+ 53:07* hashcat -O saltedhashes.txt -m 10 -a 1 dictionaries/klichki-zivotnyh/klichki-latin.txt dictionaries/own.txt
+ 53:24* hashcat -O saltedhashes.txt -m 10 -a 1 dictionaries/own.txt dictionaries/klichki-zivotnyh/klichki-latin.txt
+ STOPPED 53:48* hashcat -O saltedhashes.txt -m 10 -a 1 dictionaries/own.txt dictionaries/rockyou.txt
+ 54:30* hashcat -O saltedhashes.txt -m 10 -a 0 dictionaries/own.txt -r /usr/local/Cellar/hashcat/4.0.0/share/doc/hashcat/rules/best64.rule
+ 54:35* hashcat -O saltedhashes.txt -m 10 -a 0 dictionaries/own.txt -r /usr/local/Cellar/hashcat/4.0.0/share/doc/hashcat/rules/rockyou-30000.rule
+ 54:50* hashcat -O saltedhashes.txt -m 10 -a 1 dictionaries/rockyou.txt dictionaries/klichki-zivotnyh/klichki-latin.txt --show --outfile-format 2 > dictionaries/own.txt
+ 54:55* hashcat -O saltedhashes.txt -m 10 -a 0 dictionaries/own.txt -r /usr/local/Cellar/hashcat/4.0.0/share/doc/hashcat/rules/rockyou-30000.rule
+ 55:03* hashcat -O saltedhashes.txt -m 10 -a 1 dictionaries/rockyou.txt dictionaries/klichki-zivotnyh/klichki-latin.txt --show --outfile-format 2 > dictionaries/own.txt
+ 55:05* hashcat -O saltedhashes.txt -m 10 -a 0 dictionaries/own.txt -r /usr/local/Cellar/hashcat/4.0.0/share/doc/hashcat/rules/rockyou-30000.rule
+ 55:22* hashcat -O saltedhashes.txt -m 10 -a 0 dictionaries/own.txt -r /usr/local/Cellar/hashcat/4.0.0/share/doc/hashcat/rules/dive.rule
+ 55:55* hashcat -O saltedhashes.txt -m 10 -a 1 dictionaries/rockyou.txt dictionaries/klichki-zivotnyh/klichki-latin.txt --show --outfile-format 2 > dictionaries/own.txt
+ 56:45* ll
+ 56:55* cat replace.sh
+ 58:15* echo "f,dul" | ./replace.sh
+ 58:22* echo "ghbdtnVbh" | ./replace.sh
+ ERROR!!! 58:48* cat dictionaries/rockyou.txt| hashcat -O -m 10 saltedhashes.txt
+ 59:00* cat dictionaries/rockyou.txt| ./replace.sh| hashcat -O -m 10 saltedhashes.txt
+ 59:55* cat dictionaries/rockyou.txt| ./replace.sh| hashcat -O -m 10 saltedhashes.txt -r /usr/local/Cellar/hashcat/4.0.0/share/doc/hashcat/rules/best64.rule
+ 1:00:39* cat dictionaries/own.txt| ./replace.sh| hashcat -O -m 10 saltedhashes.txt -r /usr/local/Cellar/hashcat/4.0.0/share/doc/hashcat/rules/best64.rule
+ 1:00:39* hashcat -O saltedhashes.txt -m 10 -a 1 dictionaries/rockyou.txt dictionaries/klichki-zivotnyh/klichki-latin.txt --show --outfile-format 2 > dictionaries/own.txt
+ 1:00:39* ~/utils/pipal/pipal.rb dictionaries/own.txt
+ 1:00:39* join
+ 1:00:39* hashcat -O saltedhashes.txt -m 10 -a 1 dictionaries/rockyou.txt dictionaries/klichki-zivotnyh/klichki-latin.txt --show --outfile-format 3
+ 1:00:39* hashcat -O saltedhashes.txt -m 10 -a 1 dictionaries/rockyou.txt dictionaries/klichki-zivotnyh/klichki-latin.txt --show --outfile-format 3 > results.txt
+ 1:00:39* sort saltedhashes.txt
+ 1:00:39* sort saltedhashes.txt > sorted-hashes.txt
+ 1:00:39* sort results.txt
+ 1:00:39* sort results.txt > sorted-results.txt
+ 1:00:39* wc -l sor*
+ 1:00:39  history
+ 1:00:39* join -t : sorted-hashes.txt sorted-results.txt
+ 1:00:39* join -t : sorted-hashes.txt sorted-results.txt | cut -d ":" -f 4
+ 1:00:39* join -t : sorted-hashes.txt sorted-results.txt | cut -d ":" -f 4 > for-analyze.txt
+ 1:00:39* ~/utils/pipal/pipal.rb for-analyze.txt
+ 1:00:39* cd ~/utils/hashcat-utils-1.8
+ 1:00:39* cd bin
+ 1:00:39* ll
+ 1:00:39* cd ../src
+ 1:00:39* ll
+ 1:00:39* gcc hcstatgen.c -o ./hcstatgen
+ 1:00:39* ./hcstatgen ~/Desktop/owaspclea
+ 1:00:39* clear
+ 1:00:39* ./hcstatgen mark.hcstat       < ~/Desktop/owasp/for-analyze.txt
+ 1:00:39* cd ../statsprocessor/src
+ 1:00:39* ll
+ 1:00:39* make
+ 1:00:39* ./sp64.bin
+ 1:00:39* ./sp64.bin ../../src/mark.hcstat
+ 1:00:39* ./sp64.bin ../../src/mark.hcstat --pw-min=8
+ 1:00:39* ./sp64.bin ../../src/mark.hcstat --pw-min=8 ?l?l?l?l?l?l?l?l
+ 1:00:39  history
+ 1:00:39* ./sp64.bin ../../src/mark.hcstat --pw-min=8 ?l?l?l?l?l?l?l?l | hashcat -O -m 10 ~/Desktop/owasp/saltedhashes.txt
+ 1:00:39* pwd
+ 1:00:39* cd ../../bin/ll
+ 1:00:39* cd ../../bin/
+ 1:00:39* ll
+ 1:00:39* ./topmorph.pl
+ 1:00:39* ./topmorph.pl ~/Desktop/owasp/dictionaries/own.txt 1 2 0 8
+ 1:00:39* ./topmorph.pl ~/Desktop/owasp/dictionaries/own.txt 2 2 0 8
+ 1:00:39* ./topmorph.pl ~/Desktop/owasp/dictionaries/own.txt 5 2 0 8
+ 1:00:39* ./topmorph.pl ~/Desktop/owasp/dictionaries/own.txt 5 1 0 8
+ 1:00:39* ./topmorph.pl ~/Desktop/owasp/dictionaries/own.txt 5 2 0 8
+ 1:00:39* ./topmorph.pl ~/Desktop/owasp/dictionaries/own.txt 5 1 0 8  > ~/Desktop/owasp/tmesis1.rule
+ 1:00:39* ./topmorph.pl ~/Desktop/owasp/dictionaries/own.txt 5 2 0 8  > ~/Desktop/owasp/tmesis2.rule
+ 1:00:39* ./topmorph.pl ~/Desktop/owasp/dictionaries/own.txt 5 3 0 8  > ~/Desktop/owasp/tmesis.rule
+ 1:00:39  history
+ 1:00:39* cd ~/Desktop/owasp
+ 1:00:39* hashcat -O -m 10 -a 0 dictionaries/rockyou.txt -r tmesis1.rule
+ 1:00:39* hashcat -O -m 10 -a 0 saltedhashes.txt dictionaries/rockyou.txt -r tmesis1.rule
+ 1:00:39* hashcat -O -m 10 -a 0 saltedhashes.txt dictionaries/rockyou.txt -r tmesis2.rule
+ 1:00:39* hashcat -O -m 10 -a 0 saltedhashes.txt dictionaries/rockyou.txt -r tmesis3.rule
+ 1:00:39* hashcat -O -m 10 -a 0 saltedhashes.txt dictionaries/rockyou.txt -r tmesis.rule
+ 1:00:39* hashcat -O -m 10 -a 0 saltedhashes.txt dictionaries/rockyou.txt -r tmesis1.rule tmesis2.rule
+ 1:00:39* hashcat -O -m 10 -a 0 saltedhashes.txt dictionaries/rockyou.txt -r tmesis1.rule tmesis2.rule --show | ./check.sh
+ 1:00:39* nano ~/utils/hashcat-utils-1.8/bin/tmesis.pl
+ 1:00:39* ~/utils/pipal/pipal.rb for-analyze.txt
+ 1:00:39* ~/utils/pipal/pipal.rb for-analyze.txt | cut -d " " -f 1
+ 1:00:39* nano top10.txt
+ 1:00:39* cat top10.txt
+ 1:00:39  history
+ 1:00:39* ~/utils/hashcat-utils-1.8/bin/tmesis.pl top10.txt
+ 1:00:39* ~/utils/hashcat-utils-1.8/bin/tmesis.pl top10.txt > tmesis.rule
+ 1:00:39* hashcat -O -m 10 -a 0 saltedhashes.txt dictionaries/rockyou.txt -r tmesis.rule
+ 1:00:39* hashcat -O -m 10 -a 0 saltedhashes.txt dictionaries/rockyou.txt -r tmesis.rule --show | ./check.sh
+ 1:00:39* hashcat -O -m 10 -a 0 saltedhashes.txt dictionaries/own.txt -r tmesis.rule --show | ./check.sh
+ 1:00:39* hashcat -O -m 10 -a 0 saltedhashes.txt dictionaries/own.txt -r tmesis.rule
+ 1:00:39* hashcat -O -m 10 -a 0 saltedhashes.txt dictionaries/own.txt -r tmesis.rule --show | ./check.sh
