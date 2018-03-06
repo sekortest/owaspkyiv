@@ -12,3 +12,6 @@
 * http://wordbook.xyz/download/country/Russia/umenshitelnye-imena.txt
 * http://wordbook.xyz/download/country/Russia/klichki-zivotnyh.rar
 * http://wordbook.xyz/download/country/Russia/zenskie-muzkie-imena.rar
+
+Істрія команд з відео:
+https://github.com/sekortest/owaspkyiv/blob/master/history.txt
